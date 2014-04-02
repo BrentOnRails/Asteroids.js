@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script type="application/javascript" src="vendor/jquery-1.9.1.js"></script>
+    <script type="application/javascript" src="vendor/keymaster.js"></script>
+
+    <script type="application/javascript" src="lib/util.js"></script>
+    <script type="application/javascript" src="lib/moving_object.js"></script>
+    <script type="application/javascript" src="lib/asteroid.js"></script>
+    <script type="application/javascript" src="lib/ship.js"></script>
+    <script type="application/javascript" src="lib/bullet.js"></script>
+    <script type="application/javascript" src="lib/game.js"></script>
+    <script type="application/javascript" src="lib/game_view.js"></script>
+  </head>
+
+  <body>
+    <script type="application/javascript">
+      $(function () {
+        var canvas = $("<canvas width='" + Asteroids.Game.DIM_X + 
+                       "' height='" + Asteroids.Game.DIM_Y + "'></canvas>");
+        $('body').append(canvas);
+
+        var ctx = canvas.get(0).getContext("2d");
+        var game = Asteroids.Game.new();
+        new Asteroids.GameView(game, ctx).start();
+      });
+    </script>
+  </body>
+</head>
